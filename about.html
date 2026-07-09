@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Little Lantern</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script>
+
+function updateBasketCount() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let count = 0;
+
+    basket.forEach(function(product) {
+        count = count + product.quantity;
+    });
+
+    document.querySelectorAll(".basket-count").forEach(function(item) {
+        item.innerText = count;
+    });
+}
+
+updateBasketCount();
+
+</script>
+    <body>
+        <nav>
+    <button onclick="location.href='index.html'">Home</button>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="location.href='shop.html'">
+        Shop
+    </button>
+
+    <div class="dropdown-content">
+        <a href="colouring-books.html">Colouring Books</a>
+        <a href="bookmarks.html">Bookmarks</a>
+        <a href="stickers.html">Stickers</a>
+    </div>
+</div>
+    <button onclick="location.href='characters.html'">Meet the Characters</button>
+    <button class="active" onclick="location.href='about.html'">About</button>
+    <button onclick="location.href='contact.html'">Contact</button>
+    <button onclick="location.href='basket.html'">
+        🛒 Basket (<span class="basket-count">0</span>)
+    </button>
+    <button onclick="location.href='wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+        <h1>About Little Lantern</h1>
+        <div class="card">
+            <h2>Welcome to the Woods</h2>
+        <p>Little Lantern is a cosy woodland world filled with colouring books, stickers, bookmarks and tiny characters with big hearts. We openly have our characters wearing medical devices in order to normalise this and show people they're not alone.</p>
+        <p>Our characters are gentle, quirky, and sometimes a little clumsy, each with their own favourite hobbies, snacks and stories.</p>
+        <p>Little Lantern is built around comfort, creativity, and helping people feel a little less alone. </p>
+        </div>
+        <div class="card">
+            <h2>My Story</h2>
+            <p>Hi, I'm Lyx, the creator of Little Lantern.</p>
+            <p>Little Lantern began as a dream to create something gentle, comforting and full of kindness. Living with chronic illnesses and disabilities has taught me how important it is to find small moments of joy, whether that's colouring for a few minutes, getting lost in a cosy story, or smiling at a tiny woodland friend.</p>
+            <p>Every character you meet has their own personality, favourite hobbies and little quirks because I wanted them to feel like real friends waiting to welcome you into the woods. My hope is that Little Lantern becomes a place where people of all ages can slow down, be creative and feel safe.</p>
+            <p>Some of the Little Lantern characters wear medical devices or disability aids, such as dexcom sensors, sunflower lanyards, epilepsy bracelets, hearing aids or mobility aids. These aren't there to make them 'different' - they're simply part of who they are. As someone who lives with chronic illness and disabilities myself, I wanted children and adults alike to see characters who look a little more like them. Representation matters, and everyone deserves to feel seen, included and celebrated for exactly who they are.</p>
+            <p>Thank you for being here and supporting this little dream. I can't wait to share the adventures still waiting beyond the trees.</p>
+            <p class="signature">- Lyx</p>
+        </div>
+        <button onclick="location.href='index.html'">Home</button>
+        <script src="script.js"></script>
+    </body>
+</html>

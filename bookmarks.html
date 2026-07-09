@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bookmarks</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script>
+
+function updateBasketCount() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let count = 0;
+
+    basket.forEach(function(product) {
+        count = count + product.quantity;
+    });
+
+    document.querySelectorAll(".basket-count").forEach(function(item) {
+        item.innerText = count;
+    });
+}
+
+updateBasketCount();
+
+</script>
+    <body>
+        <nav>
+    <button onclick="location.href='index.html'">Home</button>
+    <div class="dropdown">
+    <button class="active" class="dropbtn" onclick="location.href='shop.html'">
+        Shop
+    </button>
+
+    <div class="dropdown-content">
+        <a href="colouring-books.html">Colouring Books</a>
+        <a href="bookmarks.html">Bookmarks</a>
+        <a href="stickers.html">Stickers</a>
+    </div>
+</div>
+    <button onclick="location.href='characters.html'">Meet the Characters</button>
+    <button onclick="location.href='about.html'">About</button>
+    <button onclick="location.href='contact.html'">Contact</button>
+    <button onclick="location.href='basket.html'">
+        🛒 Basket (<span class="basket-count">0</span>)
+    </button>
+    <button onclick="location.href='wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+        <div class="container">
+        <h1>Bookmarks</h1>
+        <p>Our cosy collection of bookmarks is growing behind the scenes. Pop back soon to see what's waiting in the woods.</p>
+        <h1>Bookmarks</h1>
+        <p>Peeking character bookmarks for cosy readers.</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-images">
+                    <img src="images/hiccup-bookmark-front.png" alt="Front of Hiccup Bookmark" class="product-image">
+                    <img src="images/hiccup-bookmark-back.png" alt="Back of Hiccup Bookmark" class="product-image">
+                </div>
+                <h2>Hiccup Bookmark</h2>
+                <p class="product-type">Peeking Bookmark</p>
+                <p>A cosy peeking bookmark featuring Hiccup the Hedgehog, perfect for keeping your place in woodland adventures.</p>
+                <p class="price">£6.00</p>
+                <div class="product-buttons">
+                    <button onclick="location.href='hiccup.bookmark.html'">View Product</button>
+                     <button onclick="addToBasket('Hiccup Bookmark', 6.00, 'images/hiccup-bookmark-front.png')">Add to Basket</button>
+                     <button
+    class="wishlist-button"
+    data-product="Hiccup Bookmark"
+    onclick="toggleWishlist('Hiccup Bookmark', 'images/hiccup-bookmark-front.png', 'hiccup.bookmark.html', this)"
+>
+    ♡ Add to Wishlist
+</button>
+                    </div>
+                </div>
+
+                 <div class="product-card">
+                <div class="product-images">
+                    <img src="images/callie-bookmark-front.png" alt="Front of Callie Bookmark" class="product-image">
+                    <img src="images/callie-bookmark-back.png" alt="Back of Callie Bookmark" class="product-image">
+                </div>
+                <h2>Callie Bookmark</h2>
+                <p class="product-type">Peeking Bookmark</p>
+                <p>A cosy peeking bookmark featuring Callie the Cat, perfect for keeping your place in woodland adventures.</p>
+                <p class="price">£6.00</p>
+                <div class="product-buttons">
+                    <button onclick="location.href='callie.bookmark.html'">View Product</button>
+                    <button onclick="addToBasket('Callie Bookmark', 6.00, 'images/callie-bookmark-front.png')">Add to Basket</button>
+                    <button
+    class="wishlist-button"
+    data-product="Callie Bookmark"
+    onclick="toggleWishlist('Callie Bookmark', 'images/callie-bookmark-front.png', 'callie.bookmark.html', this)"
+>
+    ♡ Add to Wishlist
+</button>
+                </div>
+            </div>
+        </div>
+        <button onclick="location.href='shop.html'">Back to Shop</button>
+        <div id="basket-toast">
+    <img id="toast-image" src="" alt="">
+    <div>
+        <strong id="toast-title"></strong>
+        <p>Added to your basket!</p>
+        <button onclick="location.href='basket.html'">View Basket</button>
+    </div>
+</div>
+<script src="script.js"></script>
+    </body>
+</html>

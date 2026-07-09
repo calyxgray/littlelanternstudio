@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Little Autumn Adventures Characters</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script>
+
+function updateBasketCount() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let count = 0;
+
+    basket.forEach(function(product) {
+        count = count + product.quantity;
+    });
+
+    document.querySelectorAll(".basket-count").forEach(function(item) {
+        item.innerText = count;
+    });
+}
+
+updateBasketCount();
+
+</script>
+    <body class="autumn-page">
+        <nav>
+    <button onclick="location.href='index.html'">Home</button>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="location.href='shop.html'">
+        Shop
+    </button>
+
+    <div class="dropdown-content">
+        <a href="colouring-books.html">Colouring Books</a>
+        <a href="bookmarks.html">Bookmarks</a>
+        <a href="stickers.html">Stickers</a>
+    </div>
+</div>
+    <button class="active" onclick="location.href='characters.html'">Meet the Characters</button>
+    <button onclick="location.href='about.html'">About</button>
+    <button onclick="location.href='contact.html'">Contact</button>
+    <button onclick="location.href='basket.html'">
+        🛒 Basket (<span class="basket-count">0</span>)
+    </button>
+    <button onclick="location.href='wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+        <div class="leaf-left"></div>
+         <div class="leaf-right"></div>
+        <div class="container">
+        <div class="character-grid">
+            <h1>Little Autumn Adventure Characters</h1>
+            <div class="card">
+                <h2>Hiccup the Hedgehog</h2>
+                <p>The curious little hedgehog who loves collecting tiny, shiny lanterns.</p>
+                <button onclick="location.href='autumn-characters/hiccup.html'">Read More</button>
+            </div>
+             <div class="card">
+                <h2>Flynn the Fox</h2>
+                <p>The wise fox who loves searching for adventures.</p>
+                <button onclick="location.href='autumn-characters/flynn.html'">Read More</button>
+            </div>
+            <div class="card">
+                <h2>Rascal the Raccoon</h2>
+                <p>The mischievous raccoon who loves to play tricks on his friends.</p>
+                <button onclick="location.href='autumn-characters/rascal.html'">Read More</button>
+            </div>
+            <div class="card">
+                <h2>Dimple the Deer</h2>
+                <p>The gentle deer who loves to explore the forest and make new friends.</p>
+                <button onclick="location.href='autumn-characters/dimple.html'">Read More</button>
+            </div>
+            <div class="card">
+                <h2>Whisper the Wolf</h2>
+                <p>The wise wolf who loves to listen to the sounds of the forest.</p>
+                <button onclick="location.href='autumn-characters/whisper.html'">Read More</button>
+            </div>
+            <div class="card">
+                <h2>Callie the Cat</h2>
+                <p>The playful cat who loves to chase butterflies and climb trees.</p>
+                <button onclick="location.href='autumn-characters/callie.html'">Read More</button> 
+              </div>
+            <div class="card">
+                <h2>Bibble the Bat</h2>
+                <p>The energetic bat who loves to fly around and play with his friends.</p>
+                <button onclick="location.href='autumn-characters/bibble.html'">Read More</button>
+            </div>
+            <div class="card">
+                <h2>Bubbles the Badger</h2>
+                <p>The cheerful badger who loves to dig burrows and cheer up her friends.</p>
+                <button onclick="location.href='autumn-characters/bubbles.html'">Read More</button>
+            </div>
+            <div class="card">
+                <h2>Rue the Raven</h2>
+                <p>The shy raven who loves to fly around and sing beautiful songs.</p>
+                <button onclick="location.href='autumn-characters/rue.html'">Read More</button>
+            </div>
+            </div>
+            <button onclick="location.href='characters.html'">Back to Characters</button>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

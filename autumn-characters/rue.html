@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rue the Raven</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <script>
+
+function updateBasketCount() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let count = 0;
+
+    basket.forEach(function(product) {
+        count = count + product.quantity;
+    });
+
+    document.querySelectorAll(".basket-count").forEach(function(item) {
+        item.innerText = count;
+    });
+}
+
+updateBasketCount();
+
+</script>
+    <body>
+          <nav>
+    <button onclick="location.href='../index.html'">Home</button>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="location.href='../shop.html'">
+        Shop
+    </button>
+
+    <div class="dropdown-content">
+        <a href="../colouring-books.html">Colouring Books</a>
+        <a href="../bookmarks.html">Bookmarks</a>
+        <a href="../stickers.html">Stickers</a>
+    </div>
+</div>
+    <button class="active" onclick="location.href='../characters.html'">Meet the Characters</button>
+    <button onclick="location.href='../about.html'">About</button>
+    <button onclick="location.href='../contact.html'">Contact</button>
+    <button onclick="location.href='../basket.html'">
+        🛒 Basket (<span class="basket-count">0</span>)
+    </button>
+    <button onclick="location.href='../wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+        <div class="container">
+            <h1>Rue the Raven</h1>
+            <p>Quiet and thoughtful, Rue watches the world carefully from above. She notices things others miss and speaks only when it matters. Rue's words are few, but they always carry meaning.</p>
+            <h2>Favourite Hobby</h2>
+            <p>Rue loves collecting beautiful feathers from around the woodlands.</p>
+            <h2>Favourite Snack</h2>
+            <p>Juicy Elderberries</p>
+            <button onclick="location.href='../autumn-characters.html'">Back to Autumn Characters</button>
+        </div>
+        <script src="../script.js"></script>
+    </body>
+</html>

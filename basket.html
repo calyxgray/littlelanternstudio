@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <button onclick="location.href='index.html'">Home</button>
+    <button onclick="location.href='shop.html'">Shop</button>
+    <button onclick="location.href='characters.html'">Meet the Characters</button>
+    <button onclick="location.href='about.html'">About</button>
+    <button onclick="location.href='contact.html'">Contact</button>
+    <button onclick="location.href='basket.html'">Basket (<span class="basket-count">0</span>)</button>
+    <button onclick="location.href='wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+
+<div class="container">
+    <h1>Your Basket</h1>
+
+    <div id="basket-items"></div>
+
+    <h2 id="basket-total">Total: £0.00</h2>
+
+    <button onclick="clearBasket()">Clear Basket</button>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+let basket = JSON.parse(localStorage.getItem("basket")) || [];
+let basketItems = document.getElementById("basket-items");
+let basketTotal = document.getElementById("basket-total");
+
+function showBasket() {
+    basketItems.innerHTML = "";
+    let total = 0;
+
+    if (basket.length === 0) {
+        basketItems.innerHTML = `
+            <div class="basket-item">
+                <h2>Your basket is empty</h2>
+                <p>Time to explore the woods...</p>
+                <button onclick="location.href='shop.html'">Continue Shopping</button>
+            </div>
+        `;
+        basketTotal.innerText = "Total: £0.00";
+        return;
+    }
+
+    basket.forEach(function(product, index) {
+        let subtotal = Number(product.price) * product.quantity;
+
+        basketItems.innerHTML += `
+            <div class="basket-item">
+                <img src="${product.image}" alt="${product.name}" class="basket-image">
+
+                <div class="basket-info">
+                    <h2>${product.name}</h2>
+                    <p class="product-type">Peeking Bookmark</p>
+                    <p>£${Number(product.price).toFixed(2)} each</p>
+
+                    <div class="quantity-controls">
+                        <button onclick="decreaseQuantity(${index})">-</button>
+                        <span>${product.quantity}</span>
+                        <button onclick="increaseQuantity(${index})">+</button>
+                    </div>
+
+                    <p class="basket-subtotal">Subtotal: £${subtotal.toFixed(2)}</p>
+
+                    <button onclick="removeItem(${index})">Remove</button>
+                </div>
+            </div>
+        `;
+
+        total += subtotal;
+    });
+
+    basketTotal.innerText = "Total: £" + total.toFixed(2);
+}
+
+function increaseQuantity(index) {
+    basket[index].quantity++;
+    localStorage.setItem("basket", JSON.stringify(basket));
+    showBasket();
+    updateBasketCount();
+}
+
+function decreaseQuantity(index) {
+    if (basket[index].quantity > 1) {
+        basket[index].quantity--;
+    } else {
+        basket.splice(index, 1);
+    }
+
+    localStorage.setItem("basket", JSON.stringify(basket));
+    showBasket();
+    updateBasketCount();
+}
+
+function removeItem(index) {
+    basket.splice(index, 1);
+    localStorage.setItem("basket", JSON.stringify(basket));
+    showBasket();
+    updateBasketCount();
+}
+
+function clearBasket() {
+    localStorage.removeItem("basket");
+    basket = [];
+    showBasket();
+    updateBasketCount();
+}
+
+showBasket();
+</script>
+
+</body>
+</html>

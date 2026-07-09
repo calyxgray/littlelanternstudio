@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rascal the Raccoon</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <script>
+
+function updateBasketCount() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let count = 0;
+
+    basket.forEach(function(product) {
+        count = count + product.quantity;
+    });
+
+    document.querySelectorAll(".basket-count").forEach(function(item) {
+        item.innerText = count;
+    });
+}
+
+updateBasketCount();
+
+</script>
+    <body>
+          <nav>
+    <button onclick="location.href='../index.html'">Home</button>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="location.href='../shop.html'">
+        Shop
+    </button>
+
+    <div class="dropdown-content">
+        <a href="../colouring-books.html">Colouring Books</a>
+        <a href="../bookmarks.html">Bookmarks</a>
+        <a href="../stickers.html">Stickers</a>
+    </div>
+</div>
+    <button class="active" onclick="location.href='../characters.html'">Meet the Characters</button>
+    <button onclick="location.href='../about.html'">About</button>
+    <button onclick="location.href='../contact.html'">Contact</button>
+    <button onclick="location.href='../basket.html'">
+        🛒 Basket (<span class="basket-count">0</span>)
+    </button>
+    <button onclick="location.href='../wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+        <div class="container">
+            <h1>Rascal the Raccoon</h1>
+            <p> Quick-witted and mischevious, Rascal is always up to something - usually involving snacks or shiny things. He's playful rather than mean and fiercely loyal to his friends, even when his ideas cause chaos. Rascal firmly believes every bad idea is worth trying at least once.</p>
+            <h2>Favourite Hobby</h2>
+            <p>Rascal loves searching the forest for shiny little treasures</p>
+            <h2>Favourite Snack</h2>
+            <p>Buttered Sweetcorn</p>
+            <button onclick="location.href='../autumn-characters.html'">Back to Autumn Characters</button>
+        </div>
+        <script src="../script.js"></script>
+    </body>
+</html>

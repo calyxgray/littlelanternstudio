@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meet the Characters</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script>
+
+function updateBasketCount() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let count = 0;
+
+    basket.forEach(function(product) {
+        count = count + product.quantity;
+    });
+
+    document.querySelectorAll(".basket-count").forEach(function(item) {
+        item.innerText = count;
+    });
+}
+
+updateBasketCount();
+
+</script>
+    <body>
+        <nav>
+    <button onclick="location.href='index.html'">Home</button>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="location.href='shop.html'">
+        Shop
+    </button>
+
+    <div class="dropdown-content">
+        <a href="colouring-books.html">Colouring Books</a>
+        <a href="bookmarks.html">Bookmarks</a>
+        <a href="stickers.html">Stickers</a>
+    </div>
+</div>
+    <button class="active" onclick="location.href='characters.html'">Meet the Characters</button>
+    <button onclick="location.href='about.html'">About</button>
+    <button onclick="location.href='contact.html'">Contact</button>
+    <button onclick="location.href='basket.html'">
+        🛒 Basket (<span class="basket-count">0</span>)
+    </button>
+    <button onclick="location.href='wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+        <h1>Meet the Characters</h1>
+        <p>Choose a Little Lantern book to meet the characters inside.</p>
+        <div class="card">
+            <h2>Little Autumn Adventures</h2>
+            <p>Meet Hiccup, Rascal, Flynn, Dimple, Whisper, Callie, Bibble, Bubbles and Rue</p>
+            <button onclick="location.href='autumn-characters.html'">Meet Autumn Characters</button>
+        </div>
+        <div class="card">
+            <h2>Little Winter Wonders</h2>
+            <p> Meet Promise, Pip, Barley, Remus and Sonny</p>
+            <button onclick="location.href='winter-characters.html'">Meet Winter Characters</button>
+        </div>
+        <button onclick="location.href='index.html'">Home</button>
+        <script src="script.js"></script>
+    </body>
+</html>

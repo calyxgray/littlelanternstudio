@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Callie Bookmark</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <script>
+
+function updateBasketCount() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let count = 0;
+
+    basket.forEach(function(product) {
+        count = count + product.quantity;
+    });
+
+    document.querySelectorAll(".basket-count").forEach(function(item) {
+        item.innerText = count;
+    });
+}
+
+updateBasketCount();
+
+</script>
+    <body>
+        <nav>
+    <button onclick="location.href='index.html'">Home</button>
+    <div class="dropdown">
+    <button class="active" class="dropbtn" onclick="location.href='shop.html'">
+        Shop
+    </button>
+
+    <div class="dropdown-content">
+        <a href="colouring-books.html">Colouring Books</a>
+        <a href="bookmarks.html">Bookmarks</a>
+        <a href="stickers.html">Stickers</a>
+    </div>
+</div>
+    <button onclick="location.href='characters.html'">Meet the Characters</button>
+    <button onclick="location.href='about.html'">About</button>
+    <button onclick="location.href='contact.html'">Contact</button>
+    <button onclick="location.href='basket.html'">
+        🛒 Basket (<span class="basket-count">0</span>)
+    </button>
+    <button onclick="location.href='wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+        <div class="container">
+            <div class="product-page-images">
+                <img id="mainImage" src="images/callie-bookmark-front.png" alt="Callie Bookmark">
+                <div class="thumbnail-row">
+                    <img src="images/callie-bookmark-front.png" onclick="changeImage('images/callie-bookmark-front.png', this)" class="thumbnail active-thumbnail">
+                    <img src="images/callie-bookmark-back.png" onclick="changeImage('images/callie-bookmark-back.png', this)" class="thumbnail">
+                </div>
+            </div>
+            <div class="product-page-info">
+                <h1>Callie Bookmark</h1>
+                <p class="product-type">Peeking Bookmark</p>
+                <p>A cosy peeking bookmark with front and back design. Designed as part of the Little Autumn Adventures collection.</p>
+                <h2>Product Details</h2>
+                <ul class="product-details">
+                    <li>Double-sided bookmark design.</li>
+                    <li>Features Callie the Cat</li>
+                    <li>Part of the Little Autumn Adventures collection</li>
+                    <li>Designed by Little Lantern</li>
+                </ul>
+                <div class="card">
+                    <h2>Meet Callie</h2>
+                    <p>Callie is a curious little cat who loves curling up with a good book, discovering hidden woodland treasures and making every friend feel at home.</p>
+                    <button onclick="location.href='autumn-characters/callie.html'">Meet Callie</button>
+                </div>
+                <button onclick="addToBasket('Callie Bookmark', 6.00, 'images/callie-bookmark-front.png')">Add to Basket</button>
+                <button
+    class="wishlist-button"
+    data-product="Callie Bookmark"
+    onclick="toggleWishlist('Callie Bookmark', 'images/callie-bookmark-front.png', 'callie.bookmark.html', this)"
+>
+    ♡ Add to Wishlist
+</button>
+                <h2>Coming Soon</h2>
+                <p>This product is not available to buy just yet, but it will be added to the Little Lantern shop soon.</p>
+                <button onclick="location.href='bookmarks.html'">Back to Bookmarks</button>
+            </div>
+             <div class="related-products">
+                <h2>You Might Also Like</h2>
+                <div class="related-grid">
+                    <div class="related-card" onclick="location.href='hiccup.bookmark.html'">
+                        <img src="images/hiccup-bookmark-front.png" alt="Hiccup Bookmark">
+                        <h3>Hiccup Bookmark</h3>
+                        <p class="product-type">Peeking Bookmark</p>
+                        <p>£6.00</p>
+                        <button onclick="location.href='hiccup.bookmark.html'">View Product</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="basket-toast">
+    <img id="toast-image" src="" alt="">
+    <div>
+        <strong id="toast-title"></strong>
+        <p>Added to your basket!</p>
+        <button onclick="location.href='basket.html'">View Basket</button>
+    </div>
+</div>
+<script src="script.js"></script>
+    </body>
+</html>

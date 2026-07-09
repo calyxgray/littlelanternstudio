@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sonny the Squirrel</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <script>
+
+function updateBasketCount() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let count = 0;
+
+    basket.forEach(function(product) {
+        count = count + product.quantity;
+    });
+
+    document.querySelectorAll(".basket-count").forEach(function(item) {
+        item.innerText = count;
+    });
+}
+
+updateBasketCount();
+
+</script>
+    <body>
+        <nav>
+    <button onclick="location.href='../index.html'">Home</button>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="location.href='../shop.html'">
+        Shop
+    </button>
+
+    <div class="dropdown-content">
+        <a href="../colouring-books.html">Colouring Books</a>
+        <a href="../bookmarks.html">Bookmarks</a>
+        <a href="../stickers.html">Stickers</a>
+    </div>
+</div>
+    <button class="active" onclick="location.href='../characters.html'">Meet the Characters</button>
+    <button onclick="location.href='../about.html'">About</button>
+    <button onclick="location.href='../contact.html'">Contact</button>
+    <button onclick="location.href='../basket.html'">
+        🛒 Basket (<span class="basket-count">0</span>)
+    </button>
+    <button onclick="location.href='../wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+        <div class="container">
+            <h1>Sonny the Squirrel</h1>
+            <p> A lovable whirlwind of motion, Sonny seems to defy gravity on a daily basis - leaping, spinning, and appearing in places no one expects. He's the clown of the group, always ready with a distraction, a daring stunt, or a ridiculous idea when spirits are low. When things are heavy, Sonny is the first to lighten the mood, even if it means falling out of a tree to do so. To sum up Sonny... he's nuts.</p>
+            <h2>Favourite Hobby</h2>
+            <p>Sonny loves to bury his friend's prized posessions for a laugh.</p>
+            <h2>Favourite Snack</h2>
+            <p>Lemon Meringue Pie</p>
+            <button onclick="location.href='../winter-characters.html'">Back to Winter Characters</button>
+        </div>
+        <script src="../script.js"></script>
+    </body>
+</html>

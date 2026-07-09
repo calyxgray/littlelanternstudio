@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Remus the Reindeer</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <script>
+
+function updateBasketCount() {
+    let basket = JSON.parse(localStorage.getItem("basket")) || [];
+    let count = 0;
+
+    basket.forEach(function(product) {
+        count = count + product.quantity;
+    });
+
+    document.querySelectorAll(".basket-count").forEach(function(item) {
+        item.innerText = count;
+    });
+}
+
+updateBasketCount();
+
+</script>
+    <body>
+          <nav>
+    <button onclick="location.href='../index.html'">Home</button>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="location.href='../shop.html'">
+        Shop
+    </button>
+
+    <div class="dropdown-content">
+        <a href="../colouring-books.html">Colouring Books</a>
+        <a href="../bookmarks.html">Bookmarks</a>
+        <a href="../stickers.html">Stickers</a>
+    </div>
+</div>
+    <button class="active" onclick="location.href='../characters.html'">Meet the Characters</button>
+    <button onclick="location.href='../about.html'">About</button>
+    <button onclick="location.href='../contact.html'">Contact</button>
+    <button onclick="location.href='../basket.html'">
+        🛒 Basket (<span class="basket-count">0</span>)
+    </button>
+    <button onclick="location.href='../wishlist.html'">Wishlist</button>
+    <div class="site-search">
+
+    <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search..."
+        onkeyup="siteSearch()"
+    >
+
+    <div id="searchResults"></div>
+
+</div>
+</nav>
+        <div class="container">
+            <h1>Remus the Reindeer</h1>
+            <p> Clumsy, well-meaning, and full of innocent chaos, Remus somehow manages to trip over snowdrifts, his own hooves, and occasionally thin air. He approaches the world with wide eyed wonder and wholehearted enthusiasm, often causing accidental mayhem but never harm. Remus reminds everyone that mistakes are part of the adventure - and that joy doesn't need to be graceful.</p>
+            <h2>Favourite Hobby</h2>
+            <p>Remus loves building snowy obstacle courses to see if he can make it through without tripping (he hasn't succeeded yet).</p>
+            <h2>Favourite Snack</h2>
+            <p>Cinnamon Gingerbread Biscuits</p>
+            <button onclick="location.href='../winter-characters.html'">Back to Winter Characters</button>
+        </div>
+        <script src="../script.js"></script>
+    </body>
+</html>
