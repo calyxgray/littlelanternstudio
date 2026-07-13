@@ -911,3 +911,132 @@ nav {
     text-align: center;
   }
 }
+/* =========================================
+   MOBILE PAGE FIXES
+========================================= */
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Make the mobile navigation span the screen */
+  .main-nav {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mobile-nav-header {
+    width: 100%;
+  }
+
+  /* Stop the main page from keeping desktop widths */
+  main {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 18px 14px;
+  }
+
+  main > section,
+  main > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Welcome/hero card */
+  .hero,
+  .hero-card,
+  .welcome,
+  .welcome-card,
+  .intro,
+  .intro-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 18px auto 30px !important;
+    padding: 28px 18px !important;
+  }
+
+  .hero h1,
+  .hero-card h1,
+  .welcome h1,
+  .welcome-card h1,
+  .intro h1,
+  .intro-card h1,
+  h1 {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    line-height: 1.1;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  .hero p,
+  .hero-card p,
+  .welcome p,
+  .welcome-card p,
+  .intro p,
+  .intro-card p {
+    width: 100%;
+    max-width: 100%;
+    margin: 14px auto;
+    font-size: 1rem;
+    line-height: 1.55;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  /* Featured character section */
+  .featured-character,
+  .featured-card,
+  .character-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 24px 18px !important;
+  }
+
+  .featured-character p,
+  .featured-card p,
+  .character-card p {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  h2 {
+    max-width: 100%;
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  footer {
+    width: 100%;
+    max-width: 100%;
+    margin: 30px 0 0;
+    padding: 28px 18px;
+    text-align: center;
+  }
+}
