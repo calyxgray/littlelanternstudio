@@ -3,6 +3,7 @@
     <head>
         <title>Remus the Reindeer</title>
         <link rel="stylesheet" href="../style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <script>
 
@@ -23,38 +24,62 @@ updateBasketCount();
 
 </script>
     <body>
-          <nav>
-    <button onclick="location.href='../index.html'">Home</button>
-    <div class="dropdown">
-    <button class="dropbtn" onclick="location.href='../shop.html'">
-        Shop
-    </button>
+          <nav class="main-nav">
 
-    <div class="dropdown-content">
+  <!-- Only shown on phones -->
+  <div class="mobile-nav-header">
+    <a href="../index.html" class="mobile-brand">Little Lantern</a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navLinks"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+
+    <a href="../about.html">About</a>
+
+    <a href="../characters.html">Meet the Characters</a>
+
+    <div class="dropdown">
+      <button class="dropbtn" type="button">Shop</button>
+
+      <div class="dropdown-content">
         <a href="../colouring-books.html">Colouring Books</a>
         <a href="../bookmarks.html">Bookmarks</a>
         <a href="../stickers.html">Stickers</a>
+      </div>
     </div>
-</div>
-    <button class="active" onclick="location.href='../characters.html'">Meet the Characters</button>
-    <button onclick="location.href='../about.html'">About</button>
-    <button onclick="location.href='../contact.html'">Contact</button>
-    <button onclick="location.href='../basket.html'">
-        🛒 Basket (<span class="basket-count">0</span>)
-    </button>
-    <button onclick="location.href='../wishlist.html'">Wishlist</button>
-    <div class="site-search">
 
-    <input
-        type="text"
+    <a href="../contact.html">Contact</a>
+
+    <a href="../wishlist.html">Wishlist</a>
+
+    <a href="../basket.html">
+      Basket <span id="basket-count">0</span>
+    </a>
+
+    <div class="site-search">
+      <input
+        type="search"
         id="siteSearch"
         placeholder="Search..."
-        onkeyup="siteSearch()"
-    >
+        aria-label="Search Little Lantern"
+      >
 
-    <div id="searchResults"></div>
+      <div id="searchResults"></div>
+    </div>
 
-</div>
+  </div>
+
 </nav>
         <div class="container">
             <h1>Remus the Reindeer</h1>

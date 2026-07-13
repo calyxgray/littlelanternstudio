@@ -363,3 +363,71 @@ function updateWishlistButtons() {
 }
 
 updateWishlistButtons();
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const dropdown = document.querySelector(".dropdown");
+  const dropdownButton = document.querySelector(".dropbtn");
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+      const menuIsOpen = navLinks.classList.toggle("open");
+
+      menuToggle.classList.toggle("active", menuIsOpen);
+      menuToggle.setAttribute("aria-expanded", String(menuIsOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        menuIsOpen
+          ? "Close navigation menu"
+          : "Open navigation menu"
+      );
+    });
+  }
+
+  if (dropdown && dropdownButton) {
+    dropdownButton.addEventListener("click", function (event) {
+      if (window.innerWidth <= 768) {
+        event.preventDefault();
+        dropdown.classList.toggle("mobile-open");
+      }
+    });
+  }
+
+  document.addEventListener("click", function (event) {
+    if (
+      window.innerWidth <= 768 &&
+      navLinks &&
+      menuToggle &&
+      !event.target.closest(".main-nav")
+    ) {
+      navLinks.classList.remove("open");
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute(
+        "aria-label",
+        "Open navigation menu"
+      );
+
+      if (dropdown) {
+        dropdown.classList.remove("mobile-open");
+      }
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 768) {
+      if (navLinks) {
+        navLinks.classList.remove("open");
+      }
+
+      if (menuToggle) {
+        menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+
+      if (dropdown) {
+        dropdown.classList.remove("mobile-open");
+      }
+    }
+  });
+});
