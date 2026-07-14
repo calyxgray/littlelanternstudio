@@ -22,13 +22,14 @@ button:hover {
     box-shadow: 0 8px 18px rgba(142, 124, 195, 0.35);
 }
 .container {
-    max-width: 900px;
-    width: 800px;
+    width: calc(100% - 28px);
+    max-width: 800px;
     margin: 40px auto;
     padding: 40px;
+    box-sizing: border-box;
     background-color: white;
-    border-radius:25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 p {
     font-size: 18px;
@@ -1082,14 +1083,10 @@ nav {
 
   /* Actual homepage welcome box */
   .container {
-    width: calc(100% - 28px) !important;
-    max-width: calc(100% - 28px) !important;
-    min-width: 0 !important;
-    margin: 18px auto 30px !important;
-    padding: 28px 18px !important;
-    transform: none !important;
-    left: auto !important;
-    right: auto !important;
+    width: calc(100% - 28px);
+    max-width: none;
+    margin: 18px auto 30px;
+    padding: 24px 16px;
   }
 
   .container h1 {
