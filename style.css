@@ -911,6 +911,27 @@ nav {
     text-align: center;
   }
 }
+/* Make the normal desktop navigation links match the Shop button */
+.nav-links > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 10px;
+  background-color: #8e7cc3;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-links > a:hover {
+  background-color: #7764ad;
+  color: white;
+  text-decoration: none;
+}
 /* =========================================
    MOBILE PAGE FIXES
 ========================================= */
@@ -922,7 +943,6 @@ nav {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    overflow-x: hidden;
   }
 
   * {
@@ -1038,5 +1058,25 @@ nav {
     margin: 30px 0 0;
     padding: 28px 18px;
     text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    overflow-x: auto;
+  }
+
+  .hero,
+  .hero-card,
+  .welcome,
+  .welcome-card,
+  .intro,
+  .intro-card {
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+    min-width: 0 !important;
+    margin: 18px 14px 30px !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
   }
 }
