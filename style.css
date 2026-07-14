@@ -1060,23 +1060,97 @@ nav {
     text-align: center;
   }
 }
+/* =========================================
+   FINAL MOBILE WIDTH FIX
+========================================= */
+
 @media (max-width: 768px) {
+
+  html,
   body {
-    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
   }
 
-  .hero,
-  .hero-card,
-  .welcome,
-  .welcome-card,
-  .intro,
-  .intro-card {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Actual homepage welcome box */
+  .container {
     width: calc(100% - 28px) !important;
     max-width: calc(100% - 28px) !important;
     min-width: 0 !important;
-    margin: 18px 14px 30px !important;
+    margin: 18px auto 30px !important;
+    padding: 28px 18px !important;
+    transform: none !important;
     left: auto !important;
     right: auto !important;
-    transform: none !important;
+  }
+
+  .container h1 {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 22px;
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    line-height: 1.1;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  .container p {
+    width: 100%;
+    max-width: 100%;
+    margin: 14px auto;
+    font-size: 1rem;
+    line-height: 1.55;
+    text-align: center;
+    overflow-wrap: break-word;
+  }
+
+  /* Actual featured section */
+  .featured {
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .featured h2 {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 18px;
+    font-size: clamp(1.6rem, 7vw, 2rem);
+    text-align: center;
+  }
+
+  /* Actual Hiccup card */
+  .featured .card,
+  .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    padding: 24px 18px !important;
+  }
+
+  .card p {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.55;
+    overflow-wrap: break-word;
+  }
+
+  footer {
+    width: 100%;
+    max-width: 100%;
+    margin: 30px 0 0;
+    padding: 28px 18px;
+    text-align: center;
   }
 }
