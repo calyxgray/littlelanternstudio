@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Stickers</title>
+        <title>Dimple Sticker</title>
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -83,32 +83,53 @@ updateBasketCount();
 
 </nav>
         <div class="container">
-        <h1>Stickers</h1>
-        <p>Our cosy collection of stickers is growing behind the scenes. Pop back soon to see what's waiting in the woods.</p>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-images">
-                    <img src="images/dimple.png" alt="Dimple Sticker" class="product-image">
+            <div class="product-page-images">
+                <img id="mainImage" src="dimple.png" alt="Dimple Sticker">
+                <div class="thumbnail-row">
+                    <img src="images/dimple.png" onclick="changeImage('images/dimple.png', this)" class="thumbnail active-thumbnail">
                 </div>
-                <h2>Dimple Sticker</h2>
+            </div>
+            <div class="product-page-info">
+                <h1>Dimple Sticker</h1>
                 <p class="product-type">Easy Peel Sticker</p>
-                <p>A cosy easy peel sticker of dimple the deer.</p>
-                <p class="price">£1.50</p>
-                <div class="product-buttons">
-                    <button onclick="location.href='dimple.sticker.html'">View Product</button>
-                     <button onclick="addToBasket('Dimple Sticker', 1.50, 'images/dimple.png')">Add to Basket</button>
-                     <button
+                <p>A cosy easy peel sticker featuring Dimple the Deer. Designed as part of the Little Autumn Adventures collection.</p>
+                <h2>Product Details</h2>
+                <ul class="product-details">
+                    <li>Easy Peel Sticker design.</li>
+                    <li>Features Dimple the Deer</li>
+                    <li>Part of the Little Autumn Adventures collection</li>
+                    <li>Designed by Little Lantern</li>
+                </ul>
+                <div class="card">
+                    <h2>Meet Dimple</h2>
+                    <p>Shy and soft-spoken, Dimple prefers to stay just behind the others, watching carefully before stepping forward. She's gentle, thoughtful, and brave in quiet ways. Her kindness shows through small gestures rather than big words.</p>
+                    <button onclick="location.href='autumn-characters/dimple.html'">Meet Dimple</button>
+                </div>
+                <button onclick="addToBasket('Dimple Sticker', 1.50, 'images/dimple.png')">Add to Basket</button>
+                <button
     class="wishlist-button"
     data-product="Dimple Sticker"
-    onclick="toggleWishlist('Dimple Stickeer', 'dimple.png', 'dimple.sticker.html', this)"
+    onclick="toggleWishlist('Dimple Sticker', 'images/dimple.png', 'dimple.sticker.html', this)"
 >
     ♡ Add to Wishlist
 </button>
+                <h2>Coming Soon</h2>
+                <p>This product is not available to buy just yet, but it will be added to the Little Lantern shop soon.</p>
+                <button onclick="location.href='bookmarks.html'">Back to Bookmarks</button>
+            </div>
+            <div class="related-products">
+                <h2>You Might Also Like</h2>
+                <div class="related-grid">
+                    <div class="related-card" onclick="location.href='callie.bookmark.html'">
+                        <img src="images/callie-bookmark-front.png" alt="Callie Bookmark">
+                        <h3>Callie Bookmark</h3>
+                        <p class="product-type">Peeking Bookmark</p>
+                        <p>£6.00</p>
+                        <button onclick="location.href='callie.bookmark.html'">View Product</button>
                     </div>
                 </div>
             </div>
         </div>
-        <button onclick="location.href='shop.html'">Back to Shop</button>
         <div id="basket-toast">
     <img id="toast-image" src="" alt="">
     <div>
@@ -118,8 +139,5 @@ updateBasketCount();
     </div>
 </div>
 <script src="script.js"></script>
-    </body>
-</html>
-        <script src="script.js"></script>
     </body>
 </html>
